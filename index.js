@@ -15,19 +15,25 @@ const generateKeystore = (privateKey, passphrase, options) => {
   }
 
   if (typeof privateKey === 'string') {
-    privateKey = privateKey.replace(/^0x/gi, '')
+    privateKey = privateKey.trim().replace(/^0x/gi, '')
   }
 
   const salt = randomBytes(32)
   const iv = randomBytes(16)
-  options = options || {
-    kdf: 'pbkdf2',
-    kdfparams: {
-      c: 100000,
-      dklen: 32,
-      prf: 'hmac-sha256'
-    },
-    cipher: 'aes-128-ctr'
+  if (!options) {
+    options = {
+      kdf: 'pbkdf2',
+      kdfparams: {
+        c: 100000,
+        dklen: 32,
+        prf: 'hmac-sha256'
+      },
+      cipher: 'aes-128-ctr'
+    }
+  }
+
+  if (typeof options === 'string') {
+    options = JSON.parse(options.trim())
   }
 
   return new Promise((resolve) => {

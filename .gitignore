@@ -103,7 +103,6 @@ uploads
 tmp
 /coverage
 .nyc_output/
-example
 
 # Files to ignore #
 #####################

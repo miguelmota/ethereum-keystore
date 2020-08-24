@@ -1,6 +1,6 @@
 {
   "name": "ethereum-keystore",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Ethereum keystore generator and reader",
   "main": "index.js",
   "bin": {
