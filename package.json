@@ -1,0 +1,51 @@
+{
+  "name": "ethereum-keystore",
+  "version": "0.0.1",
+  "description": "Ethereum keystore generator and reader",
+  "main": "index.js",
+  "bin": {
+    "ethereum_keystore": "bin/ethereum_keystore",
+    "ethereum-keystore": "bin/ethereum_keystore"
+  },
+  "scripts": {
+    "test": "tape test/*.js",
+    "lint": "standard --fix index.js test/test.js example/example.js",
+    "build:example": "browserify example/main.js -o example/dist/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miguelmota/ethereum-keystore"
+  },
+  "bugs": {
+    "url": "https://github.com/miguelmota/ethereum-keystore/issues"
+  },
+  "homepage": "https://github.com/miguelmota/ethereum-keystore",
+  "author": {
+    "name": "Miguel Mota",
+    "email": "hello@miguelmota.com",
+    "url": "https://miguelmota.com/"
+  },
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/miguelmota/ethereum-keystore/blob/master/LICENSE"
+  },
+  "dependencies": {
+    "keythereum": "^1.0.4",
+    "meow": "^7.1.0"
+  },
+  "keywords": [
+    "ethereum",
+    "keystore",
+    "cryptography",
+    "address",
+    "generator",
+    "import",
+    "export",
+    "cli"
+  ],
+  "devDependencies": {
+    "browserify": "^16.5.1",
+    "standard": "^12.0.1",
+    "tape": "^4.10.2"
+  }
+}
